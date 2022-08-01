@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: red; text-align: center;">
+  <style>
+    form {
+  background-color: rgba(255, 255, 255, 0.838);
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 200px;
+ margin-left: 30%;
+ margin-right: 30%;
+}
+  </style>
+  <form>0
+    <h1>Colour Changer</h1>
+        <div id="increment-count">
+          <label>Choose colour : <input type="color" id="increments"/><br><br></label>
+        </div>
+        <p>Count</p>
+        
+        <div id="total-count">
+        </div>
+    </div><br>
+  </form>
+  <button id="button-submit" onclick="location.href='file:///C:/Users/Prodian/Desktop/proj/index.html'">SUBMIT</button>
+    <script>
+       
+const increasecount = document.getElementById("increment-count");
+
+const totalCount = document.getElementById("total-count");
+
+
+var count = 0;
+
+
+totalCount.innerHTML = count;
+
+
+const handleIncrement = () => {
+   if (count < 7) {
+      count++;
+  totalCount.innerHTML = count;
+  document.getElementById("button-submit").disabled = true;
+    }
+    var nu;
+    if (count == 7) {
+      document.getElementById("button-submit").disabled = false;
+      document.getElementById('increments').disabled = true;
+    }
+    
+};
+
+
+increasecount.addEventListener("click", handleIncrement);
+
+
+document.querySelector('input').addEventListener('input', function() {
+  document.body.style.backgroundColor = this.value;
+})
+
+
+
+    </script>
+</body>
+</html>
